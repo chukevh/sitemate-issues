@@ -1,8 +1,13 @@
-//const Issue = require("../models/issue")
+const Issue = require("../models/issue")
 
 const getIssue = async (req,res) => {
-    console.log("getting issue")
-    res.status(200).json({message: "Get Issues"})
+    try {
+        const issues = await Issue.find({})
+        res.status(200).json(issues)
+        console.log("Issue data fetched")
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
 }
 
 const createIssue = async (req,res) => {
