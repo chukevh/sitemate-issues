@@ -1,8 +1,10 @@
+import logo from '../assets/sitematelogo.png'
+
 export default function Header() {
     return (
         <>
             <nav className="header">
-                <h2>Sitemate Issues</h2>
+                <img src={logo} className="logo"/>
             </nav>
         </>
     )

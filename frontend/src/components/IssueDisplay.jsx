@@ -14,7 +14,9 @@ export default function IssueDisplay() {
         }
     }, [])
 
-    const issueElement = issues.map((issue) => {
+    const sortedIssues = issues.sort((a,b) => a.id - b.id)
+
+    const issueElement = sortedIssues.map((issue) => {
         return (
             <IssueCard 
                 issue={issue}

@@ -1,3 +1,20 @@
+export async function getIssues() {
+    try {
+        const res = await fetch("/api/issue",
+            {
+                method: "get", 
+                headers: {'Content-Type': 'application/json'} 
+            }
+        )
+
+        const data = await res.json()
+        return data
+    } catch (error) {
+        console.log(error.message)
+    }
+
+}
+
 export async function createIssue(id, title, description) {
     try {
         const res = await fetch("/api/issue",
